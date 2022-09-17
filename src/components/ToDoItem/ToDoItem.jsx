@@ -1,6 +1,9 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
 
 const ToDoItem = () => {
+  const dispatch = useDispatch();
+
   // using async functions to target todos
 
   // handleCheckboxButton
@@ -17,7 +20,7 @@ const ToDoItem = () => {
     <div>
       <input
         type="checkbox"
-        checked={completed}
+        // checked={completed}
         onClick={handleCheckboxButton}
       />
       <button onClick={handleDeleteButton}>Delete</button>
