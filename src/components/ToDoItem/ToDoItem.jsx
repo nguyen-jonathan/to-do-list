@@ -5,3 +5,5 @@ const ToDoItem = () => {
     <input type="checkbox" checked={completed} onClick={handleCheckboxClick} />
   );
 };
+
+export default ToDoItem;
