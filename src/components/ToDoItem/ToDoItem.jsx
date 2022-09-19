@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
 
-const ToDoItem = () => {
+const ToDoItem = ({id, title, completed}) => {
   const dispatch = useDispatch();
 
   // using async functions to target todos
@@ -17,14 +17,18 @@ const ToDoItem = () => {
   };
 
   return (
-    <div>
-      <input
-        type="checkbox"
-        // checked={completed}
-        onClick={handleCheckboxButton}
-      />
-      <button onClick={handleDeleteButton}>Delete</button>
-    </div>
+    <li className={`list-group-item ${completed && 'list-group-item-success'}`}>
+      <div>
+        <input
+          type="checkbox"
+          checked={completed}
+          onClick={handleCheckboxButton}
+        />
+        <button className="btn btn-danger" onClick={handleDeleteButton}>
+          Delete
+        </button>
+      </div>
+    </li>
   );
 };
 
