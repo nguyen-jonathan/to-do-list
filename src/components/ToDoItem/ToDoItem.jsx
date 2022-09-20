@@ -19,11 +19,14 @@ const ToDoItem = ({id, title, completed}) => {
   return (
     <li className={`list-group-item ${completed && 'list-group-item-success'}`}>
       <div>
-        <input
-          type="checkbox"
-          checked={completed}
-          onClick={handleCheckboxButton}
-        />
+        <span className="d-flex align-items-center">
+          <input
+            type="checkbox"
+            checked={completed}
+            onClick={handleCheckboxButton}
+          />
+          {title}
+        </span>
         <button className="btn btn-danger" onClick={handleDeleteButton}>
           Delete
         </button>
